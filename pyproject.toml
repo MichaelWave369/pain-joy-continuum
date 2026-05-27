@@ -9,7 +9,7 @@ description = "A symbolic-operational reflective framework for moving pain towar
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-  { name = "Michael W. Hughes", email = "" }
+  { name = "Michael W. Hughes" }
 ]
 license = { text = "MIT for code; CC BY-NC-SA 4.0 for content" }
 keywords = ["reflective-framework", "symbolic-model", "journaling", "phi369", "parallax"]
