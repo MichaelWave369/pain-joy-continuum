@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pain-joy-continuum"
+version = "1.2.0"
+description = "A symbolic-operational reflective framework for moving pain toward breath, dignity, agency, release, Golden Joy, and service."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Michael W. Hughes", email = "" }
+]
+license = { text = "MIT for code; CC BY-NC-SA 4.0 for content" }
+keywords = ["reflective-framework", "symbolic-model", "journaling", "phi369", "parallax"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
