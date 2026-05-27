@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://phi369labs.local/schemas/pjc_cycle_v1.schema.json",
+  "title": "Pain-Joy Continuum Cycle Receipt",
+  "type": "object",
+  "required": ["schema_version", "cycle_id", "created_at", "source", "claim_boundary", "safety"],
+  "properties": {
+    "schema_version": { "const": "pjc.cycle.v1" },
+    "cycle_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "source": { "type": "string", "enum": ["self_report", "manual", "demo", "synthetic"] },
+    "life_lock": {
+      "type": "object",
+      "properties": {
+        "chi": { "type": "number", "minimum": 0, "maximum": 1 },
+        "status": { "type": "string", "enum": ["pause", "continue", "support"] }
+      }
+    },
+    "quadrants": {
+      "type": "object",
+      "properties": {
+        "light": { "type": "number", "minimum": 0, "maximum": 1 },
+        "growth": { "type": "number", "minimum": 0, "maximum": 1 },
+        "water": { "type": "number", "minimum": 0, "maximum": 1 },
+        "matter": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "pain_vectors": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "operators": {
+      "type": "object",
+      "properties": {
+        "coherence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "agency": { "type": "number", "minimum": 0, "maximum": 1 },
+        "release": { "type": "number", "minimum": 0, "maximum": 1 },
+        "boundary": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "claim_boundary": {
+      "type": "string",
+      "const": "reflective_symbolic_not_clinical"
+    },
+    "safety": {
+      "type": "object",
+      "required": ["consent", "not_diagnosis", "not_treatment"],
+      "properties": {
+        "consent": { "type": "boolean" },
+        "not_diagnosis": { "type": "boolean" },
+        "not_treatment": { "type": "boolean" },
+        "grounding_first": { "type": "boolean" }
+      }
+    }
+  }
+}
