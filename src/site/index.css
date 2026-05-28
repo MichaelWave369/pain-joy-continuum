@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dark-card,
+[class*="bg-stone-950"][class*="bg-white"] {
+  background-color: rgb(12 10 9) !important;
+  color: rgb(250 250 249) !important;
+}
+
+.dark-card code {
+  color: rgb(254 243 199);
+}
+
+code {
+  border-radius: 0.5rem;
+  color: inherit;
+  font-weight: 700;
+}
