@@ -23,10 +23,12 @@ import {
   Waves,
 } from 'lucide-react';
 
-const SITE_VERSION = 'PJC v1.2 Public Candidate';
+const SITE_VERSION = 'PJC v1.2.1 Public Release';
 const AUTHOR = 'Michael W. Hughes — Parallax / PHI369 Labs';
 const SITE_URL = 'https://michaelwave369.github.io/pain-joy-continuum/';
 const REPO_URL = 'https://github.com/MichaelWave369/pain-joy-continuum';
+const ZENODO_URL = 'https://zenodo.org/records/20421291';
+const DOI_URL = 'https://doi.org/10.5281/zenodo.20421291';
 const RAW_BASE = 'https://raw.githubusercontent.com/MichaelWave369/pain-joy-continuum/main';
 
 const downloads = [
@@ -172,7 +174,7 @@ export default function App() {
             <div className="mb-5 flex flex-wrap gap-2">
               <Badge>Reflective framework</Badge>
               <Badge tone="amber">Mirror, not master</Badge>
-              <Badge tone="cream">Not clinical advice</Badge>
+              <Badge tone="cream">DOI-backed public release</Badge>
             </div>
             <h1 className="max-w-4xl text-5xl font-black tracking-tight text-stone-950 md:text-7xl">Pain-Joy Continuum</h1>
             <p className="mt-5 max-w-3xl text-xl leading-8 text-stone-700">A symbolic-operational framework for moving pain toward breath, dignity, agency, release, Golden Joy, and service.</p>
@@ -180,6 +182,7 @@ export default function App() {
             <Card className="mt-8 border-stone-900/20 bg-stone-950 text-stone-50 dark-card">
               <p className="text-lg font-semibold text-amber-200">Core thesis</p>
               <p className="mt-3 text-2xl font-bold leading-snug">Golden Joy is not the absence of pain. Golden Joy is pain understood, cohered, released, and returned to love.</p>
+              <p className="mt-4 text-sm leading-6 text-stone-200">Zenodo DOI: <a className="font-bold text-amber-200 underline" href={DOI_URL}>{DOI_URL}</a></p>
             </Card>
           </motion.div>
 
@@ -260,14 +263,14 @@ export default function App() {
 
         <section id="downloads" className="mx-auto max-w-7xl px-4 py-10 md:px-6 scroll-mt-32">
           <SectionTitle eyebrow="Downloads" title="Read the source documents">The editable source documents and rendered PDFs are included in the repository and linked directly from GitHub raw file URLs so the buttons work from the live site.</SectionTitle>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">{downloads.map(([label, href]) => <a key={label} href={href} target="_blank" rel="noreferrer" className="group rounded-3xl border border-amber-200 bg-white/85 p-5 shadow-sm transition hover:-translate-y-1 hover:border-stone-400 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-stone-900"><div className="flex items-center justify-between gap-4"><IconBubble icon={Download} /><ExternalLink className="text-stone-400 transition group-hover:text-stone-900" size={18} aria-hidden="true" /></div><h3 className="mt-4 text-lg font-bold text-stone-950">{label}</h3><p className="mt-2 text-sm text-stone-600">Open or download from the PJC v1.2 public candidate repository.</p></a>)}</div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">{downloads.map(([label, href]) => <a key={label} href={href} target="_blank" rel="noreferrer" className="group rounded-3xl border border-amber-200 bg-white/85 p-5 shadow-sm transition hover:-translate-y-1 hover:border-stone-400 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-stone-900"><div className="flex items-center justify-between gap-4"><IconBubble icon={Download} /><ExternalLink className="text-stone-400 transition group-hover:text-stone-900" size={18} aria-hidden="true" /></div><h3 className="mt-4 text-lg font-bold text-stone-950">{label}</h3><p className="mt-2 text-sm text-stone-600">Open or download from the PJC v1.2.1 public release repository.</p></a>)}</div>
         </section>
 
         <section id="cite" className="mx-auto max-w-7xl px-4 py-10 md:px-6 scroll-mt-32">
-          <SectionTitle eyebrow="Citation" title="How to cite this work">Use the repository citation metadata for software/site references and the master spec title for content references.</SectionTitle>
+          <SectionTitle eyebrow="Citation" title="How to cite this work">Use the Zenodo DOI for archival citation and the repository for live software/source references.</SectionTitle>
           <div className="grid gap-4 lg:grid-cols-2">
-            <Card className="bg-stone-950 text-stone-50 dark-card"><p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-200">Suggested citation</p><p className="mt-3 text-sm leading-7 text-stone-100">Hughes, Michael W. <em>Pain-Joy Continuum: The Joy Crucible Master Spec.</em> Parallax / PHI369 Labs, {SITE_VERSION}. Public navigator.</p></Card>
-            <Card><p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-800">Version and repository</p><p className="mt-3 text-sm leading-7 text-stone-700">Site: <a className="font-semibold text-stone-950 underline" href={SITE_URL}>GitHub Pages navigator</a></p><p className="mt-1 text-sm leading-7 text-stone-700">Repository: <a className="font-semibold text-stone-950 underline" href={REPO_URL}>MichaelWave369/pain-joy-continuum</a></p><p className="mt-1 text-sm leading-7 text-stone-700">Code license: MIT. Documents, formulas, diagrams, and visual assets: CC BY-NC-SA 4.0 unless otherwise noted.</p></Card>
+            <Card className="bg-stone-950 text-stone-50 dark-card"><p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-200">Suggested citation</p><p className="mt-3 text-sm leading-7 text-stone-100">Hughes, Michael W. (2026). <em>Pain-Joy Continuum: The Joy Crucible Master Spec</em> (v1.2.1). Zenodo. <a className="font-bold text-amber-200 underline" href={DOI_URL}>https://doi.org/10.5281/zenodo.20421291</a></p></Card>
+            <Card><p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-800">Version and repository</p><p className="mt-3 text-sm leading-7 text-stone-700">Zenodo: <a className="font-semibold text-stone-950 underline" href={ZENODO_URL}>archival record</a></p><p className="mt-1 text-sm leading-7 text-stone-700">Site: <a className="font-semibold text-stone-950 underline" href={SITE_URL}>GitHub Pages navigator</a></p><p className="mt-1 text-sm leading-7 text-stone-700">Repository: <a className="font-semibold text-stone-950 underline" href={REPO_URL}>MichaelWave369/pain-joy-continuum</a></p><p className="mt-1 text-sm leading-7 text-stone-700">Code license: MIT. Documents, formulas, diagrams, and visual assets: CC BY-NC-SA 4.0 unless otherwise noted.</p></Card>
           </div>
         </section>
       </main>
@@ -276,7 +279,7 @@ export default function App() {
         <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
             <p className="text-lg font-bold text-amber-200">Pain-Joy Continuum</p>
-            <p className="mt-2 max-w-3xl text-sm leading-7 text-stone-200">{SITE_VERSION}. Reflective, symbolic, educational, creative-research, and software-design project by {AUTHOR}. This project is not medical advice, legal advice, spiritual authority, therapy, diagnosis, crisis care, a validated psychological scale, or a replacement for qualified support.</p>
+            <p className="mt-2 max-w-3xl text-sm leading-7 text-stone-200">{SITE_VERSION}. Reflective, symbolic, educational, creative-research, and software-design project by {AUTHOR}. Zenodo DOI: <a className="font-bold text-amber-200 underline" href={DOI_URL}>10.5281/zenodo.20421291</a>. This project is not medical advice, legal advice, spiritual authority, therapy, diagnosis, crisis care, a validated psychological scale, or a replacement for qualified support.</p>
           </div>
           <div className="rounded-3xl border border-amber-200/20 bg-white/10 p-4 text-sm leading-7 text-stone-200">
             <p><strong className="text-amber-200">License split:</strong> Code is MIT. Documents, formulas, diagrams, and visual assets are CC BY-NC-SA 4.0 unless otherwise noted.</p>
