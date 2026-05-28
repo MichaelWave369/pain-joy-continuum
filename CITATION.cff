@@ -1,13 +1,15 @@
 cff-version: 1.2.0
 title: Pain-Joy Continuum
-message: If you use this project, please cite it using the metadata below.
+message: If you use this project, please cite the Zenodo DOI below.
 type: software
 authors:
   - family-names: Hughes
     given-names: Michael W.
-version: 1.2.0
-date-released: 2026-05-27
+version: 1.2.1
+date-released: 2026-05-28
+doi: 10.5281/zenodo.20421291
 repository-code: https://github.com/MichaelWave369/pain-joy-continuum
+url: https://michaelwave369.github.io/pain-joy-continuum/
 abstract: A symbolic-operational reflective framework for moving pain toward breath, dignity, agency, release, Golden Joy, and service.
 license: MIT
 preferred-citation:
@@ -18,4 +20,6 @@ preferred-citation:
       given-names: Michael W.
   institution: Parallax / PHI369 Labs
   year: 2026
-  version: PJC v1.2 Public Candidate
+  version: v1.2.1
+  doi: 10.5281/zenodo.20421291
+  url: https://zenodo.org/records/20421291
