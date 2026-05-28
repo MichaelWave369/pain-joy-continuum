@@ -5,7 +5,6 @@ import {
   BadgeCheck,
   BookOpen,
   Brain,
-  ChevronRight,
   Compass,
   Download,
   ExternalLink,
@@ -16,10 +15,8 @@ import {
   Infinity,
   Leaf,
   LockKeyhole,
-  Map,
   Orbit,
   RotateCcw,
-  Scale,
   Search,
   ShieldCheck,
   Sparkles,
@@ -30,12 +27,13 @@ const SITE_VERSION = 'PJC v1.2 Public Candidate';
 const AUTHOR = 'Michael W. Hughes — Parallax / PHI369 Labs';
 const SITE_URL = 'https://michaelwave369.github.io/pain-joy-continuum/';
 const REPO_URL = 'https://github.com/MichaelWave369/pain-joy-continuum';
+const RAW_BASE = 'https://raw.githubusercontent.com/MichaelWave369/pain-joy-continuum/main';
 
 const downloads = [
-  ['Master Spec PDF', '/pain-joy-continuum/pdf/PJC_v1_2_Joy_Crucible_Master_Spec.pdf'],
-  ['Formula Sheet PDF', '/pain-joy-continuum/pdf/PJC_v1_1_Formula_Sheet.pdf'],
-  ['Master Spec DOCX', '/pain-joy-continuum/source/PJC_v1_2_Joy_Crucible_Master_Spec.docx'],
-  ['Formula Sheet DOCX', '/pain-joy-continuum/source/PJC_v1_1_Formula_Sheet.docx'],
+  ['Master Spec PDF', `${RAW_BASE}/docs/pdf/PJC_v1_2_Joy_Crucible_Master_Spec.pdf`],
+  ['Formula Sheet PDF', `${RAW_BASE}/docs/pdf/PJC_v1_1_Formula_Sheet.pdf`],
+  ['Master Spec DOCX', `${RAW_BASE}/docs/source/PJC_v1_2_Joy_Crucible_Master_Spec.docx`],
+  ['Formula Sheet DOCX', `${RAW_BASE}/docs/source/PJC_v1_1_Formula_Sheet.docx`],
 ];
 
 const navItems = [
@@ -261,8 +259,8 @@ export default function App() {
         </section>
 
         <section id="downloads" className="mx-auto max-w-7xl px-4 py-10 md:px-6 scroll-mt-32">
-          <SectionTitle eyebrow="Downloads" title="Read the source documents">The editable source documents and rendered PDFs are included in the repository and served from this GitHub Pages site.</SectionTitle>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">{downloads.map(([label, href]) => <a key={label} href={href} download className="group rounded-3xl border border-amber-200 bg-white/85 p-5 shadow-sm transition hover:-translate-y-1 hover:border-stone-400 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-stone-900"><div className="flex items-center justify-between gap-4"><IconBubble icon={Download} /><ExternalLink className="text-stone-400 transition group-hover:text-stone-900" size={18} aria-hidden="true" /></div><h3 className="mt-4 text-lg font-bold text-stone-950">{label}</h3><p className="mt-2 text-sm text-stone-600">Download from the PJC v1.2 public candidate package.</p></a>)}</div>
+          <SectionTitle eyebrow="Downloads" title="Read the source documents">The editable source documents and rendered PDFs are included in the repository and linked directly from GitHub raw file URLs so the buttons work from the live site.</SectionTitle>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">{downloads.map(([label, href]) => <a key={label} href={href} target="_blank" rel="noreferrer" className="group rounded-3xl border border-amber-200 bg-white/85 p-5 shadow-sm transition hover:-translate-y-1 hover:border-stone-400 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-stone-900"><div className="flex items-center justify-between gap-4"><IconBubble icon={Download} /><ExternalLink className="text-stone-400 transition group-hover:text-stone-900" size={18} aria-hidden="true" /></div><h3 className="mt-4 text-lg font-bold text-stone-950">{label}</h3><p className="mt-2 text-sm text-stone-600">Open or download from the PJC v1.2 public candidate repository.</p></a>)}</div>
         </section>
 
         <section id="cite" className="mx-auto max-w-7xl px-4 py-10 md:px-6 scroll-mt-32">
